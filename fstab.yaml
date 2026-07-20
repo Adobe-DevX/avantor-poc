@@ -1,0 +1,2 @@
+mountpoints:
+  /: 'https://localhost:8443/bin/franklin.delivery/OneAdobe/avantor-poc/main'
