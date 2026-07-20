@@ -1,0 +1,9 @@
+.mfe {
+  display: block;
+  width: 100%;
+}
+
+.mfe .mfe-placeholder {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "MFE",
+      "id": "mfe",
+      "model": "mfe",
+      "plugins": {
+        "da": {
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "mfe",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "tagName",
+          "label": "Tag Name",
+          "description": "Custom element tag name registered by the remote micro-frontend, e.g. vwr-header",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "scriptUrl",
+          "label": "Script URL",
+          "description": "Absolute URL to the remote micro-frontend's main JS module",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "polyfillsUrl",
+          "label": "Polyfills URL",
+          "description": "Optional: URL to a secondary JS module that must load and execute before Script URL (e.g. an Angular polyfills.js bundle)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "styleUrl",
+          "label": "Style URL",
+          "description": "Optional: URL to a CSS file to load alongside the remote micro-frontend"
+        },
+        {
+          "component": "select",
+          "name": "loading",
+          "label": "Loading",
+          "description": "Lazy defers loading until the block nears the viewport (IntersectionObserver); Eager loads immediately to avoid layout shift for above-the-fold instances",
+          "options": [
+            {
+              "name": "Lazy (IntersectionObserver)",
+              "value": "lazy"
+            },
+            {
+              "name": "Eager (load immediately)",
+              "value": "eager"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "rootMargin",
+          "label": "Root Margin",
+          "description": "Optional: IntersectionObserver rootMargin used when Loading is Lazy, e.g. 200px (default 200px)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "minHeight",
+          "label": "Min Height",
+          "description": "Optional: reserved placeholder height (e.g. 80px) shown before the remote micro-frontend mounts, to reduce layout shift"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

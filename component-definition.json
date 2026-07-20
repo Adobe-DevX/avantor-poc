@@ -262,6 +262,16 @@
           }
         },
         {
+          "title": "MFE",
+          "id": "mfe",
+          "model": "mfe",
+          "plugins": {
+            "da": {
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
           "title": "Targeted Block",
           "id": "targeted-block",
           "model": "targeted-block",

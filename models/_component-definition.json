@@ -48,6 +48,9 @@
           "...": "../blocks/hero/_*.json#/definitions"
         },
         {
+          "...": "../blocks/mfe/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/targeted-block/_*.json#/definitions"
         },
         {
