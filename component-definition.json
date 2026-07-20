@@ -11,6 +11,12 @@
             "da": {
               "name": "text",
               "type": "text"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/text/v1/text",
+                "template": {}
+              }
             }
           }
         },
@@ -32,6 +38,12 @@
                   "selector": "img[src]"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/image/v1/image",
+                "template": {}
+              }
             }
           }
         }
@@ -47,6 +59,14 @@
           "plugins": {
             "da": {
               "unsafeHTML": "<div></div>"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section"
+                }
+              }
             }
           },
           "filter": "section",
@@ -68,6 +88,15 @@
               "name": "accordion",
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Accordion",
+                  "filter": "accordion"
+                }
+              }
             }
           }
         },
@@ -90,6 +119,15 @@
                   "selector": "div:nth-child(2)"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Accordion Item",
+                  "model": "accordion-item"
+                }
+              }
             }
           }
         },
@@ -102,6 +140,15 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards",
+                  "filter": "cards"
+                }
+              }
             }
           }
         },
@@ -127,6 +174,15 @@
                   "selector": "div:nth-child(2)"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
             }
           }
         },
@@ -139,6 +195,15 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Carousel",
+                  "filter": "carousel"
+                }
+              }
             }
           }
         },
@@ -164,6 +229,15 @@
                   "selector": "div:nth-child(2)"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Carousel Slide",
+                  "model": "carousel-item"
+                }
+              }
             }
           }
         },
@@ -178,6 +252,16 @@
               "rows": 1,
               "columns": 2,
               "behaviour": "columns"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Columns",
+                  "model": "columns",
+                  "filter": "columns"
+                }
+              }
             }
           }
         },
@@ -190,6 +274,15 @@
             "da": {
               "name": "columns-row",
               "behaviour": "columns-row"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns Row",
+                  "filter": "columns-row"
+                }
+              }
             }
           }
         },
@@ -202,6 +295,15 @@
             "da": {
               "unsafeHTML": "<div></div>",
               "behaviour": "columns-cell"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Columns Cell",
+                  "filter": "columns-cell"
+                }
+              }
             }
           }
         },
@@ -212,6 +314,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Enrichment",
+                  "model": "enrichment"
+                }
+              }
             }
           }
         },
@@ -233,6 +344,15 @@
                   "selector": "div>div>p>a"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Fragment",
+                  "model": "fragment"
+                }
+              }
             }
           }
         },
@@ -258,6 +378,15 @@
                   "selector": "div>div>h1"
                 }
               ]
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero",
+                  "model": "hero"
+                }
+              }
             }
           }
         },
@@ -268,6 +397,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "MFE",
+                  "model": "mfe"
+                }
+              }
             }
           }
         },
@@ -278,6 +416,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Targeted Block",
+                  "model": "targeted-block"
+                }
+              }
             }
           }
         },
@@ -288,6 +435,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Account Header",
+                  "model": "commerce-account-header"
+                }
+              }
             }
           }
         },
@@ -299,6 +455,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Account Sidebar"
+                }
+              }
             }
           }
         },
@@ -309,6 +473,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Addresses",
+                  "model": "commerce-addresses"
+                }
+              }
             }
           }
         },
@@ -319,6 +492,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Cart",
+                  "model": "commerce-cart"
+                }
+              }
             }
           }
         },
@@ -330,6 +512,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Checkout Success"
+                }
+              }
             }
           }
         },
@@ -341,6 +531,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Checkout"
+                }
+              }
             }
           }
         },
@@ -352,6 +550,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Confirm Account"
+                }
+              }
             }
           }
         },
@@ -363,6 +569,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Create Account"
+                }
+              }
             }
           }
         },
@@ -374,6 +588,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Create Password"
+                }
+              }
             }
           }
         },
@@ -385,6 +607,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Create Return"
+                }
+              }
             }
           }
         },
@@ -396,6 +626,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Customer Details"
+                }
+              }
             }
           }
         },
@@ -407,6 +645,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Customer Information"
+                }
+              }
             }
           }
         },
@@ -418,6 +664,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Forgot Password"
+                }
+              }
             }
           }
         },
@@ -429,6 +683,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Gift Options"
+                }
+              }
             }
           }
         },
@@ -440,6 +702,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Login"
+                }
+              }
             }
           }
         },
@@ -450,6 +720,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Mini Cart",
+                  "model": "commerce-mini-cart"
+                }
+              }
             }
           }
         },
@@ -461,6 +740,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Comments"
+                }
+              }
             }
           }
         },
@@ -472,6 +759,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Cost Summary"
+                }
+              }
             }
           }
         },
@@ -483,6 +778,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Header"
+                }
+              }
             }
           }
         },
@@ -494,6 +797,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Product List"
+                }
+              }
             }
           }
         },
@@ -505,6 +816,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Returns"
+                }
+              }
             }
           }
         },
@@ -516,6 +835,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Order Status"
+                }
+              }
             }
           }
         },
@@ -526,6 +853,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Orders List",
+                  "model": "commerce-orders-list"
+                }
+              }
             }
           }
         },
@@ -537,6 +873,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Return Header"
+                }
+              }
             }
           }
         },
@@ -547,6 +891,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Returns List",
+                  "model": "commerce-returns-list"
+                }
+              }
             }
           }
         },
@@ -558,6 +911,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Search Order"
+                }
+              }
             }
           }
         },
@@ -569,6 +930,14 @@
             "da": {
               "rows": 1,
               "columns": 2
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Shipping Status"
+                }
+              }
             }
           }
         },
@@ -579,6 +948,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Commerce Wishlist",
+                  "model": "commerce-wishlist"
+                }
+              }
             }
           }
         }
@@ -595,6 +973,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Product Details",
+                  "model": "product-details"
+                }
+              }
             }
           }
         },
@@ -605,6 +992,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Product List Page",
+                  "model": "product-list-page"
+                }
+              }
             }
           }
         },
@@ -615,6 +1011,15 @@
           "plugins": {
             "da": {
               "type": "key-value-block"
+            },
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Product Recommendations",
+                  "model": "product-recommendations"
+                }
+              }
             }
           }
         }
