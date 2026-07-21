@@ -7,3 +7,11 @@
   display: block;
   width: 100%;
 }
+
+/* The embedded remote app manages its own internal max-width/padding (it's built to be
+   dropped edge-to-edge into a page, same as in its standalone build). Undo the default
+   section wrapper's 1200px cap + side padding so it isn't double-boxed here. */
+main > .section .mfe-wrapper {
+  max-width: unset;
+  padding: 0;
+}
