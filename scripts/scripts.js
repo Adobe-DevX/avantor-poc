@@ -211,7 +211,10 @@ if (IS_UE) {
   await import(`${window.hlx.codeBasePath}/scripts/ue.js`).then(({ default: ue }) => ue());
 }
 
-loadPage();
+// aem-embed (https://www.aem.live/docs/aem-embed) dynamically imports this module from within
+// another page's shadow DOM to reuse decorateMain() — without this guard, that import would
+// also re-run the full page bootstrap against whatever document happens to be importing it.
+if (!window.hlx.suppressLoadPage) loadPage();
 
 (async function loadDa() {
   if (!IS_DA) return;
