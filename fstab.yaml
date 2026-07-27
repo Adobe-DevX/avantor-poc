@@ -1,2 +1,5 @@
 mountpoints:
-  /: 'https://localhost:8443/bin/franklin.delivery/OneAdobe/avantor-poc/main'
+  /:
+    url: "https://localhost:8443/bin/franklin.delivery/OneAdobe/avantor-poc/main"
+    type: "markup"
+    suffix: ".html"
