@@ -14,7 +14,7 @@
               "selector": "div>div>picture>img[src]"
             },
             {
-              "name": "alt",
+              "name": "imageAlt",
               "selector": "div>div>picture>img[alt]"
             },
             {
@@ -49,12 +49,12 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "alt",
+          "name": "imageAlt",
           "label": "Alt",
           "value": ""
         },
         {
-          "component": "text",
+          "component": "richtext",
           "name": "text",
           "value": "",
           "label": "Text",

@@ -1,6 +1,10 @@
 module.exports = {
   root: true,
-  extends: 'airbnb-base',
+  extends: [
+    'airbnb-base',
+    'plugin:json/recommended',
+    'plugin:xwalk/recommended',
+  ],
   env: {
     browser: true,
   },
@@ -32,6 +36,14 @@ module.exports = {
       files: ['build.mjs'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      // generated aggregate: the mfe block intentionally exceeds 4 cells (see
+      // FIELD_ORDER comment in blocks/mfe/mfe.js for why positional fields are required)
+      files: ['component-models.json'],
+      rules: {
+        'xwalk/max-cells': 'off',
       },
     },
   ],

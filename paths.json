@@ -9,7 +9,6 @@
   ],
   "includes": [
     "/content/poc-site/",
-    "/content/dam/poc-site/",
-    "/content/aem-boilerplate-commerce/"
+    "/content/dam/poc-site/"
   ]
 }

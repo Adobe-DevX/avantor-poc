@@ -1,7 +1,15 @@
 [
   {
     "id": "main",
-    "components": ["section"]
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "columns-main",
+    "components": [
+      "columns-section"
+    ]
   },
   {
     "...": "./_section.json#/filters"

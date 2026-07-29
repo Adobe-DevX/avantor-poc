@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Commerce Search Order",
+      "title": "Search Order",
       "id": "commerce-search-order",
       "model": "commerce-search-order",
       "plugins": {
@@ -13,7 +13,9 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Commerce Search Order"
+              "name": "Commerce Search Order",
+              "model": "commerce-search-order",
+              "key-value": true
             }
           }
         }
