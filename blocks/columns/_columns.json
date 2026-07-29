@@ -3,64 +3,13 @@
     {
       "title": "Columns",
       "id": "columns",
-      "model": "columns",
-      "filter": "columns",
       "plugins": {
-        "da": {
-          "name": "columns",
-          "rows": 1,
-          "columns": 2,
-          "behaviour": "columns"
-        },
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
+            "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "name": "Columns",
-              "model": "columns",
-              "filter": "columns"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Columns Row",
-      "id": "columns-row",
-      "model": "columns-row",
-      "filter": "columns-row",
-      "plugins": {
-        "da": {
-          "name": "columns-row",
-          "behaviour": "columns-row"
-        },
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Columns Row",
-              "filter": "columns-row"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Columns Cell",
-      "id": "columns-cell",
-      "model": "columns-cell",
-      "filter": "columns-cell",
-      "plugins": {
-        "da": {
-          "unsafeHTML": "<div></div>",
-          "behaviour": "columns-cell"
-        },
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Columns Cell",
-              "filter": "columns-cell"
+              "columns": "2",
+              "rows": "1"
             }
           }
         }
@@ -72,15 +21,18 @@
       "id": "columns",
       "fields": [
         {
-          "component": "number",
+          "component": "text",
           "valueType": "number",
           "name": "columns",
-          "label": "Number of Columns",
-          "value": 2,
-          "validation": {
-            "numberMin": 1,
-            "numberMax": 6
-          }
+          "value": "",
+          "label": "Columns"
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
         }
       ]
     }
@@ -89,18 +41,16 @@
     {
       "id": "columns",
       "components": [
-        "columns-row"
+        "column"
       ]
     },
     {
-      "id": "columns-row",
-      "components": []
-    },
-    {
-      "id": "columns-cell",
+      "id": "column",
       "components": [
         "text",
-        "image"
+        "image",
+        "button",
+        "title"
       ]
     }
   ]

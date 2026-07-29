@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Commerce Create Account",
+      "title": "Create Account",
       "id": "commerce-create-account",
       "model": "commerce-create-account",
       "plugins": {
@@ -13,11 +13,13 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Commerce Create Account"
+              "name": "Commerce Create Account",
+              "model": "commerce-create-account",
+              "key-value": true
             }
           }
         }
-      }
+      }  
     }
   ],
   "models": [],

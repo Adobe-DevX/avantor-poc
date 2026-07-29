@@ -71,8 +71,8 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "label": "Alt",
+          "value": ""
         },
         {
           "component": "richtext",
