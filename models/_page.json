@@ -5,13 +5,29 @@
       "fields": [
         {
           "component": "text",
-          "name": "title",
+          "name": "template",
+          "label": "Template",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "jcr:title",
           "label": "Title"
         },
         {
           "component": "text",
-          "name": "description",
+          "valueType": "string",
+          "name": "jcr:description",
           "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "keywords",
+          "multi": true,
+          "label": "Keywords"
         },
         {
           "component": "reference",

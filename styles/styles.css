@@ -11,6 +11,7 @@
  */
 
 /* stylelint-disable no-empty-source */
+
 /* :host alongside :root: when this stylesheet is loaded inside a shadow root (e.g. by
    https://www.aem.live/docs/aem-embed), there is no <html> for :root to match, so these
    custom properties need to also land on the shadow host itself to inherit into the tree. */
@@ -144,6 +145,11 @@ html, body {
   min-height: 100%;
 }
 
+html.adobe-ue-preview,
+html.adobe-ue-edit {
+  height: unset
+}
+
 html {
   font-size: 62.5%;
 }
@@ -162,6 +168,11 @@ body {
 
 body:not(.appear) {
   display: none;
+}
+
+html.adobe-ue-preview body,
+html.adobe-ue-edit body {
+  height: unset
 }
 
 header {

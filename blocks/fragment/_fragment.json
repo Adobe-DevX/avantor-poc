@@ -36,15 +36,9 @@
       "id": "fragment",
       "fields": [
         {
-          "component": "text",
-          "name": "fragmentUrl",
-          "label": "Fragment URL",
-          "required": true
-        },
-        {
-          "component": "text",
-          "name": "fragmentUrlText",
-          "label": "Fragment URL Text"
+          "component": "aem-content",
+          "name": "reference",
+          "label": "Reference"
         }
       ]
     }
