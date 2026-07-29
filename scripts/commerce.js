@@ -563,7 +563,7 @@ export async function fetchPlaceholders(path) {
  * @returns {Promise<Object>} - The config JSON from session storage
  */
 export async function getConfigFromSession() {
-  const configURL = `${window.location.origin}/config.json`;
+  const configURL = `${window.location.origin}${window.hlx.codeBasePath}/config.json`;
 
   try {
     const configJSON = window.sessionStorage.getItem('config');
@@ -763,7 +763,7 @@ export async function loadErrorPage(code = 404) {
     window.location.replace('/notfound');
     return;
   }
-  const htmlText = await fetch(`/${code}.html`).then((response) => {
+  const htmlText = await fetch(`${window.hlx.codeBasePath}/${code}.html`).then((response) => {
     if (response.ok) {
       return response.text();
     }

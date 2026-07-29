@@ -11,7 +11,10 @@
  */
 
 /* stylelint-disable no-empty-source */
-:root, .dropin-design {
+/* :host alongside :root: when this stylesheet is loaded inside a shadow root (e.g. by
+   https://www.aem.live/docs/aem-embed), there is no <html> for :root to match, so these
+   custom properties need to also land on the shadow host itself to inherit into the tree. */
+:root, .dropin-design, :host {
   /* Adobe Commerce Dropin design tokens */
   --color-brand-300: #6d6d6d;
   --color-brand-500: #454545;

@@ -1,0 +1,15 @@
+{
+  "mappings": [
+    "/content/demo-site/:/",
+    "/content/dam/demo-site/fragments/:/fragments/",
+    "/content/demo-site/configuration:/.helix/config.json",
+    "/content/demo-site/headers:/.helix/headers.json",
+    "/content/demo-site/metadata:/metadata.json",
+    "/content/demo-site.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
+  ],
+  "includes": [
+    "/content/demo-site/",
+    "/content/dam/demo-site/",
+    "/content/aem-boilerplate-commerce/"
+  ]
+}

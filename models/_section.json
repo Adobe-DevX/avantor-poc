@@ -6,6 +6,14 @@
       "plugins": {
         "da": {
           "unsafeHTML": "<div></div>"
+        },
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section"
+            }
+          }
         }
       },
       "filter": "section",
@@ -160,6 +168,7 @@
         "enrichment",
         "fragment",
         "image",
+        "mfe",
         "product-details",
         "product-list-page",
         "product-recommendations",
