@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p199216-e2062199.adobeaemcloud.com/bin/franklin.delivery/OneAdobe/avantor-poc/main"
+    url: "https://author-p199216-e2062199.adobeaemcloud.com/bin/franklin.delivery/Adobe-DevX/avantor-poc/main"
     type: "markup"
     suffix: ".html"
