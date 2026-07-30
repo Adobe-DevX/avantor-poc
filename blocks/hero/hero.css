@@ -4,34 +4,127 @@
 }
 
 .hero {
+  --hero-navy: #0a1f44;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral-50);
+  overflow: hidden;
+  padding: 0;
+  min-height: unset;
+}
+
+.hero > div:first-child {
   position: relative;
+  order: 2;
+}
+
+.hero > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -1px;
+  z-index: 1;
+  width: 90px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 400' fill='none'%3E%3Cpath d='M-10 400 C 40 300, 10 200, 60 100 C 90 40, 60 10, 20 -10' stroke='%23eff5ef' stroke-width='4'/%3E%3Cpath d='M0 400 C 50 300, 20 200, 70 100 C 100 40, 70 10, 30 -10' stroke='%237fb078' stroke-width='4'/%3E%3Cpath d='M10 400 C 60 300, 30 200, 80 100 C 110 40, 80 10, 40 -10' stroke='%2353824c' stroke-width='4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 100% 100%;
+}
+
+.hero > div:first-child picture {
+  display: block;
+  height: 220px;
+}
+
+.hero > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero > div:last-child {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 40px 24px;
-  min-height: 300px;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  max-width: unset;
+  margin: 0 0 16px;
+  color: var(--hero-navy);
+  font-size: 28px;
+  line-height: 1.2;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero > div:last-child p {
+  margin: 0 0 24px;
+  color: var(--hero-navy);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero > div:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+.hero .button-wrapper {
+  margin: 0;
+}
+
+.hero a.button.primary {
+  gap: 12px;
+  padding: 0.6em 0.6em 0.6em 1.4em;
+  background-color: var(--hero-navy);
+  border-color: var(--hero-navy);
+  color: var(--color-neutral-50);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero a.button.primary:hover,
+.hero a.button.primary:focus-visible {
+  background-color: #132a5c;
+  border-color: #132a5c;
+}
+
+.hero a.button.primary::after {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(255 255 255 / 20%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  border-radius: 50%;
 }
 
 @media (min-width: 900px) {
   .hero {
-    padding: 40px 32px;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 420px;
+  }
+
+  .hero > div:first-child {
+    width: 55%;
+  }
+
+  .hero > div:first-child picture {
+    height: 100%;
+  }
+
+  .hero > div:last-child {
+    width: 45%;
+    padding: 48px 64px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
   }
 }
