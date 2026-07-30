@@ -38,18 +38,6 @@
         }
       },
       "commerce-assets-enabled": false
-    },
-    "/fr/": {
-      "headers": {
-        "all": {
-          "Store": "fr"
-        },
-        "cs": {
-          "Magento-Store-Code": "fr_store",
-          "Magento-Website-Code": "fr_website",
-          "Magento-Store-View-Code": "fr"
-        }
-      }
     }
   }
 }
