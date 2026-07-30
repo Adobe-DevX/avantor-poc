@@ -1,7 +1,7 @@
 {
   "mappings": [
     "/content/poc-site/:/",
-    "/content/dam/poc-site/fragments/:/fragments/",
+    "/content/poc-site/fragments/:/fragments/",
     "/content/poc-site/configuration:/.helix/config.json",
     "/content/poc-site/headers:/.helix/headers.json",
     "/content/poc-site/metadata:/metadata.json",
