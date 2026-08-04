@@ -5,11 +5,26 @@
  * here is keyed off `.hero-banner`. Apply this same pattern to any other
  * fragment/block: scope its CSS under the section style class that wraps it.
  */
-.hero-banner > div,
+
+/*
+ * Make the banner full-bleed. The section's content wrapper (`.fragment-wrapper`
+ * when embedded, `.hero-wrapper` when standalone) is normally capped by
+ * `main > .section > div { max-width: 1200px; margin: auto; padding: 0 24px }`,
+ * which would leave a gap at the right edge. These selectors are specific
+ * enough to override that and stretch the banner across the full viewport.
+ */
+main > .section.hero-banner > div,
 .hero-banner .hero-container .hero-wrapper {
-  max-width: unset;
+  max-width: none;
   margin: 0;
   padding: 0;
+}
+
+/* consistent 100px gap below each hero-style section */
+main > .section.hero-banner,
+main > .section.dark-hero-banner,
+main > .section.hero-advertisement-banner {
+  margin-bottom: 100px;
 }
 
 .hero-banner .hero {
@@ -27,27 +42,9 @@
   order: 2;
 }
 
-.hero-banner .hero > div:first-child::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 48px;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 400' fill='none'%3E%3Cpath d='M4 400 C 44 320, 14 240, 50 160 C 78 96, 50 48, 16 0' stroke='%23ffffff' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M14 400 C 54 320, 24 240, 60 160 C 88 96, 60 48, 26 0' stroke='%237fb078' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M24 400 C 64 320, 34 240, 70 160 C 98 96, 70 48, 36 0' stroke='%2353824c' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 100% 100%;
-}
-
 .hero-banner .hero > div:first-child picture {
-  position: relative;
-  z-index: 2;
   display: block;
-  height: 220px;
-  margin-left: 32px;
-  border-radius: 20px;
-  overflow: hidden;
+  height: 240px;
 }
 
 .hero-banner .hero > div:first-child img {
@@ -127,22 +124,30 @@
   }
 
   .hero-banner .hero > div:first-child {
-    width: 55%;
-  }
-
-  .hero-banner .hero > div:first-child::before {
-    width: 64px;
+    width: 58%;
   }
 
   .hero-banner .hero > div:first-child picture {
     height: 100%;
-    margin-left: 40px;
-    border-radius: 28px;
+    clip-path: ellipse(82% 125% at 100% 50%);
+  }
+
+  /* decorative green→blue curves tracing the image's curved left edge */
+  .hero-banner .hero > div:first-child::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M55 -2 C 16 30, 16 70, 55 102' stroke='%236cae5e' stroke-width='1.5' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M60 -2 C 22 30, 22 70, 60 102' stroke='%2333a89f' stroke-width='1.5' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M65 -2 C 28 30, 28 70, 65 102' stroke='%234a90d9' stroke-width='1.5' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 46% 100%;
   }
 
   .hero-banner .hero > div:last-child {
-    width: 45%;
-    padding: 48px 64px;
+    width: 35%;
+    padding: 56px 64px;
   }
 
   .hero-banner .hero h1 {

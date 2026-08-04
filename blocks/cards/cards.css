@@ -327,3 +327,10 @@
     font-size: 30px;
   }
 }
+
+/* consistent 100px gap below each card-list-style section */
+main > .section.fr-card-list,
+main > .section.detailed-card-list,
+main > .section.feaured-brand-cards {
+  margin-bottom: 100px;
+}
