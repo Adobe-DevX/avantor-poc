@@ -64,6 +64,10 @@
             {
               "name": "Dark Hero Banner",
               "value": "dark-hero-banner"
+            },
+            {
+              "name": "Detailed Card List",
+              "value": "detailed-card-list"
             }
           ]
         },

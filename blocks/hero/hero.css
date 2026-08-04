@@ -149,3 +149,129 @@
     font-size: 42px;
   }
 }
+
+/*
+ * Styles below are scoped to the "dark-hero-banner" section style.
+ * A hero block placed in a section using this style renders as a dark navy
+ * banner contained to the site's content width (not full-bleed): a rounded
+ * image on the left, white heading and copy on the right, and a white pill CTA
+ * with a light-blue circular arrow. Every rule is keyed off `.dark-hero-banner`
+ * so nothing here affects other section styles.
+ */
+
+/* stylelint-disable no-descending-specificity */
+.dark-hero-banner {
+  --dark-hero-navy: #0a1f44;
+  --dark-hero-circle: #a7d3f0;
+}
+
+/*
+ * The navy background sits on the section's content wrapper, which keeps the
+ * default max-width/centering, so the band stays inside the page's content
+ * column instead of spanning the full viewport width.
+ */
+main > .section.dark-hero-banner > div {
+  padding: var(--spacing-xbig);
+  background-color: var(--dark-hero-navy);
+}
+
+.dark-hero-banner .hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.dark-hero-banner .hero > div:first-child picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.dark-hero-banner .hero > div:first-child img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.dark-hero-banner .hero h1,
+.dark-hero-banner .hero h2 {
+  max-width: unset;
+  margin: 0 0 16px;
+  color: var(--color-neutral-50);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.dark-hero-banner .hero > div:last-child p {
+  margin: 0 0 24px;
+  color: var(--color-neutral-50);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.dark-hero-banner .hero > div:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+.dark-hero-banner .hero .button-wrapper {
+  margin: 0;
+}
+
+.dark-hero-banner .hero a.button.primary {
+  gap: 12px;
+  padding: 0.6em 0.6em 0.6em 1.4em;
+  background-color: var(--color-neutral-50);
+  border-color: var(--color-neutral-50);
+  border-radius: 999px;
+  color: var(--dark-hero-navy);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dark-hero-banner .hero a.button.primary:hover,
+.dark-hero-banner .hero a.button.primary:focus-visible {
+  background-color: var(--color-neutral-300);
+  border-color: var(--color-neutral-300);
+}
+
+.dark-hero-banner .hero a.button.primary::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--dark-hero-circle);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1f44' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  border-radius: 50%;
+}
+
+@media (min-width: 900px) {
+  main > .section.dark-hero-banner > div {
+    padding: var(--spacing-xxbig);
+  }
+
+  .dark-hero-banner .hero {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xxbig);
+  }
+
+  .dark-hero-banner .hero > div:first-child {
+    flex: 0 0 32%;
+  }
+
+  .dark-hero-banner .hero > div:last-child {
+    flex: 1;
+  }
+
+  .dark-hero-banner .hero h1,
+  .dark-hero-banner .hero h2 {
+    font-size: 40px;
+  }
+}
