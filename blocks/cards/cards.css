@@ -29,3 +29,88 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/*
+ * Styles below are scoped to the "fr-card-list" section style.
+ * A cards block placed in a section using this style renders as a horizontal
+ * "Popular products" list: a bold navy heading above a row of tiles, each a
+ * circular image on a rounded grey background with a blue label beneath.
+ * Every rule is keyed off `.fr-card-list` so it only applies within that
+ * section style — the default cards styling is untouched elsewhere.
+ */
+.fr-card-list {
+  --fr-card-list-navy: #0a1f44;
+  --fr-card-list-blue: #1a5fd6;
+  --fr-card-list-tile: var(--color-neutral-300);
+}
+
+.fr-card-list .default-content-wrapper h3 {
+  margin: 0;
+  color: var(--fr-card-list-navy);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.fr-card-list .cards > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-medium);
+}
+
+.fr-card-list .cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: transparent;
+}
+
+.fr-card-list .cards .cards-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  aspect-ratio: 3 / 2;
+  background-color: var(--fr-card-list-tile);
+  border-radius: 14px;
+}
+
+.fr-card-list .cards .cards-card-image picture {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.fr-card-list .cards > ul > li img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fr-card-list .cards .cards-card-body {
+  margin: var(--spacing-small) 0 0;
+}
+
+.fr-card-list .cards .cards-card-body h3 {
+  margin: 0;
+  color: var(--fr-card-list-blue);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fr-card-list .cards .cards-card-body h3 strong {
+  font-weight: 400;
+}
+
+@media (min-width: 900px) {
+  .fr-card-list .default-content-wrapper h3 {
+    font-size: 36px;
+  }
+
+  .fr-card-list .cards > ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
