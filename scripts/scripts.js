@@ -155,20 +155,21 @@ export function decorateButtons(main) {
 }
 
 /**
- * Reads each section's Section Metadata block (if present), applies its fields
- * to the section (`style` becomes one or more classes, other keys become
- * data attributes), then removes the block so it isn't rendered as content.
+ * Reads every Section Metadata block in the tree, applies its fields to the
+ * nearest enclosing section (`style` becomes one or more classes, other keys
+ * become data attributes), then removes the block so it isn't rendered.
  *
  * AEM's crosswalk Section component delivers this block as literal markup
  * instead of stripping it server-side (unlike classic EDS document authoring),
  * so the site's own JS has to consume it — otherwise the key/value pairs show
- * up as visible text and the section never gets its style class.
+ * up as visible text and the section never gets its style class. The scan is
+ * not limited to top-level sections because a fragment inlined into a page
+ * nests its section (and its metadata block) below the host section.
  * @param {Element} main The container element
  */
 function decorateSectionMetadata(main) {
-  main.querySelectorAll(':scope > div.section').forEach((section) => {
-    const metadataBlock = section.querySelector(':scope > div > .section-metadata');
-    if (!metadataBlock) return;
+  main.querySelectorAll('div.section-metadata').forEach((metadataBlock) => {
+    const section = metadataBlock.closest('.section') || metadataBlock.parentElement;
     const config = readBlockConfig(metadataBlock);
     Object.keys(config).forEach((key) => {
       if (key === 'style') {
