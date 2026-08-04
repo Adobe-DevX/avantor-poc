@@ -29,3 +29,301 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/*
+ * Styles below are scoped to the "fr-card-list" section style.
+ * A cards block placed in a section using this style renders as a horizontal
+ * "Popular products" list: a bold navy heading above a row of tiles, each a
+ * circular image on a rounded grey background with a blue label beneath.
+ * Every rule is keyed off `.fr-card-list` so it only applies within that
+ * section style — the default cards styling is untouched elsewhere.
+ */
+.fr-card-list {
+  --fr-card-list-navy: #0a1f44;
+  --fr-card-list-blue: #1a5fd6;
+  --fr-card-list-tile: var(--color-neutral-300);
+}
+
+.fr-card-list .default-content-wrapper h3 {
+  margin: 0;
+  color: var(--fr-card-list-navy);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.fr-card-list .cards > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-medium);
+}
+
+.fr-card-list .cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: transparent;
+}
+
+.fr-card-list .cards .cards-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  aspect-ratio: 3 / 2;
+  background-color: var(--fr-card-list-tile);
+  border-radius: 14px;
+}
+
+.fr-card-list .cards .cards-card-image picture {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.fr-card-list .cards > ul > li img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fr-card-list .cards .cards-card-body {
+  margin: var(--spacing-small) 0 0;
+}
+
+.fr-card-list .cards .cards-card-body h3 {
+  margin: 0;
+  color: var(--fr-card-list-blue);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fr-card-list .cards .cards-card-body h3 strong {
+  font-weight: 400;
+}
+
+@media (min-width: 900px) {
+  .fr-card-list .default-content-wrapper h3 {
+    font-size: 36px;
+  }
+
+  .fr-card-list .cards > ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/*
+ * Styles below are scoped to the "detailed-card-list" section style.
+ * A cards block placed in a section using this style renders as a row of
+ * detailed brand cards: a bold navy heading above cards that each have a
+ * rounded image, a blue linked title, a description, and a navy "Shop Now"
+ * pill button anchored to the bottom. Every rule is keyed off
+ * `.detailed-card-list`; the band stays within the page's content width.
+ */
+
+/* stylelint-disable no-descending-specificity */
+.detailed-card-list {
+  --detailed-card-navy: #0a1f44;
+  --detailed-card-blue: #1a5fd6;
+  --detailed-card-circle: #a7d3f0;
+}
+
+.detailed-card-list .default-content-wrapper h3 {
+  margin: 0;
+  color: var(--detailed-card-navy);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.detailed-card-list .cards > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-big);
+}
+
+.detailed-card-list .cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: transparent;
+}
+
+.detailed-card-list .cards .cards-card-image {
+  line-height: 0;
+}
+
+.detailed-card-list .cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detailed-card-list .cards .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: var(--spacing-small) 0 0;
+}
+
+.detailed-card-list .cards .cards-card-body h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.detailed-card-list .cards .cards-card-body h2 a {
+  color: var(--detailed-card-blue);
+  text-decoration: none;
+}
+
+.detailed-card-list .cards .cards-card-body h2 a:hover {
+  text-decoration: underline;
+}
+
+.detailed-card-list .cards .cards-card-body p {
+  margin: 0 0 var(--spacing-small);
+  color: var(--color-neutral-800);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.detailed-card-list .cards .cards-card-body p.button-wrapper {
+  margin: auto 0 0;
+  padding-top: var(--spacing-xsmall);
+}
+
+.detailed-card-list .cards a.button.primary {
+  gap: 12px;
+  padding: 0.6em 0.6em 0.6em 1.4em;
+  background-color: var(--detailed-card-navy);
+  border-color: var(--detailed-card-navy);
+  border-radius: 999px;
+  color: var(--color-neutral-50);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.detailed-card-list .cards a.button.primary:hover,
+.detailed-card-list .cards a.button.primary:focus-visible {
+  background-color: #132a5c;
+  border-color: #132a5c;
+}
+
+.detailed-card-list .cards a.button.primary::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--detailed-card-circle);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1f44' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  border-radius: 50%;
+}
+
+@media (min-width: 600px) {
+  .detailed-card-list .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .detailed-card-list .default-content-wrapper h3 {
+    font-size: 36px;
+  }
+
+  .detailed-card-list .cards > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*
+ * Styles below are scoped to the "feaured-brand-cards" section style.
+ * (Class name matches the authored section style, including its spelling.)
+ * A cards block placed in a section using this style renders as a row of
+ * brand logo tiles: a bold navy heading above white, softly bordered rounded
+ * tiles that hold a centred, uncropped logo, with a blue label beneath each.
+ * Every rule is keyed off `.feaured-brand-cards`; the row stays within the
+ * page's content width.
+ */
+.feaured-brand-cards {
+  --feaured-brand-navy: #0a1f44;
+  --feaured-brand-blue: #1a5fd6;
+}
+
+.feaured-brand-cards .default-content-wrapper h3 {
+  margin: 0;
+  color: var(--feaured-brand-navy);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.feaured-brand-cards .cards > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-medium);
+}
+
+.feaured-brand-cards .cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: transparent;
+}
+
+.feaured-brand-cards .cards .cards-card-image {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.feaured-brand-cards .cards > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feaured-brand-cards .cards .cards-card-body {
+  margin: var(--spacing-small) 0 0;
+  padding-left: 9px;
+  margin-top: 20px;
+}
+
+.feaured-brand-cards .cards .cards-card-body h2 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.feaured-brand-cards .cards .cards-card-body h2 a {
+  color: var(--feaured-brand-blue);
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.feaured-brand-cards .cards .cards-card-body h2 a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+  .feaured-brand-cards .default-content-wrapper h3 {
+    font-size: 36px;
+  }
+
+  .feaured-brand-cards .cards > ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .feaured-brand-cards .cards .cards-card-body h2 {
+    font-size: 30px;
+  }
+}

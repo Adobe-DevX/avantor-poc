@@ -165,6 +165,26 @@
           {
             "name": "Hero Banner",
             "value": "hero-banner"
+          },
+          {
+            "name": "Fr Card List",
+            "value": "fr-card-list"
+          },
+          {
+            "name": "Dark Hero Banner",
+            "value": "dark-hero-banner"
+          },
+          {
+            "name": "Detailed Card List",
+            "value": "detailed-card-list"
+          },
+          {
+            "name": "Feaured Brand Cards",
+            "value": "feaured-brand-cards"
+          },
+          {
+            "name": "Hero Advertisement Banner",
+            "value": "hero-advertisement-banner"
           }
         ]
       },
