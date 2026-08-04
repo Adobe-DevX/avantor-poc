@@ -24,6 +24,19 @@ export async function loadFragment(path) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
 
+      // Some environments (notably the AEM author instance that backs the
+      // Universal Editor) return a full HTML document from `.plain.html`
+      // instead of just the body fragment the published pipeline serves. In
+      // that case the real section content is wrapped in an inner <main> and
+      // preceded by stray <head> nodes (title/meta/link/…). Unwrap to that
+      // inner <main> so only genuine sections are decorated — otherwise the
+      // sections stay nested and undecorated, and the fragment's blocks (hero,
+      // cards, …) never load where the fragment is referenced.
+      const innerMain = main.querySelector('main');
+      if (innerMain) {
+        main.replaceChildren(...innerMain.childNodes);
+      }
+
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
         main.querySelectorAll(`${tag}[${attr}^="./media_"]`).forEach((elem) => {
