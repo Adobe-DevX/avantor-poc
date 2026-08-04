@@ -60,6 +60,10 @@
             {
               "name": "Fr Card List",
               "value": "fr-card-list"
+            },
+            {
+              "name": "Dark Hero Banner",
+              "value": "dark-hero-banner"
             }
           ]
         },
