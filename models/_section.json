@@ -72,6 +72,10 @@
             {
               "name": "Feaured Brand Cards",
               "value": "feaured-brand-cards"
+            },
+            {
+              "name": "Hero Advertisement Banner",
+              "value": "hero-advertisement-banner"
             }
           ]
         },
