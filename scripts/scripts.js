@@ -9,6 +9,9 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  readBlockConfig,
+  toCamelCase,
+  toClassName,
 } from './aem.js';
 import {
   loadCommerceEager,
@@ -152,6 +155,33 @@ export function decorateButtons(main) {
 }
 
 /**
+ * Reads each section's Section Metadata block (if present), applies its fields
+ * to the section (`style` becomes one or more classes, other keys become
+ * data attributes), then removes the block so it isn't rendered as content.
+ *
+ * AEM's crosswalk Section component delivers this block as literal markup
+ * instead of stripping it server-side (unlike classic EDS document authoring),
+ * so the site's own JS has to consume it — otherwise the key/value pairs show
+ * up as visible text and the section never gets its style class.
+ * @param {Element} main The container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > div.section').forEach((section) => {
+    const metadataBlock = section.querySelector(':scope > div > .section-metadata');
+    if (!metadataBlock) return;
+    const config = readBlockConfig(metadataBlock);
+    Object.keys(config).forEach((key) => {
+      if (key === 'style') {
+        config.style.split(',').forEach((style) => section.classList.add(toClassName(style.trim())));
+      } else {
+        section.dataset[toCamelCase(key)] = config[key];
+      }
+    });
+    metadataBlock.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -160,6 +190,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

@@ -1,49 +1,62 @@
-.hero-container .hero-wrapper {
+/*
+ * Styles below are scoped to the "hero-banner" section style.
+ * The Hero block relies on the section-level style (chosen by the author
+ * in Section Metadata) to determine its visual treatment, so every rule
+ * here is keyed off `.hero-banner`. Apply this same pattern to any other
+ * fragment/block: scope its CSS under the section style class that wraps it.
+ */
+.hero-banner > div,
+.hero-banner .hero-container .hero-wrapper {
   max-width: unset;
+  margin: 0;
   padding: 0;
 }
 
-.hero {
+.hero-banner .hero {
   --hero-navy: #0a1f44;
 
   display: flex;
   flex-direction: column;
   background-color: var(--color-neutral-50);
-  overflow: hidden;
   padding: 0;
   min-height: unset;
 }
 
-.hero > div:first-child {
+.hero-banner .hero > div:first-child {
   position: relative;
   order: 2;
 }
 
-.hero > div:first-child::before {
+.hero-banner .hero > div:first-child::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 -1px;
+  inset: 0;
   z-index: 1;
-  width: 90px;
+  width: 48px;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 400' fill='none'%3E%3Cpath d='M-10 400 C 40 300, 10 200, 60 100 C 90 40, 60 10, 20 -10' stroke='%23eff5ef' stroke-width='4'/%3E%3Cpath d='M0 400 C 50 300, 20 200, 70 100 C 100 40, 70 10, 30 -10' stroke='%237fb078' stroke-width='4'/%3E%3Cpath d='M10 400 C 60 300, 30 200, 80 100 C 110 40, 80 10, 40 -10' stroke='%2353824c' stroke-width='4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 400' fill='none'%3E%3Cpath d='M4 400 C 44 320, 14 240, 50 160 C 78 96, 50 48, 16 0' stroke='%23ffffff' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M14 400 C 54 320, 24 240, 60 160 C 88 96, 60 48, 26 0' stroke='%237fb078' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M24 400 C 64 320, 34 240, 70 160 C 98 96, 70 48, 36 0' stroke='%2353824c' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 100% 100%;
 }
 
-.hero > div:first-child picture {
+.hero-banner .hero > div:first-child picture {
+  position: relative;
+  z-index: 2;
   display: block;
   height: 220px;
+  margin-left: 32px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.hero > div:first-child img {
+.hero-banner .hero > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.hero > div:last-child {
+.hero-banner .hero > div:last-child {
   order: 1;
   display: flex;
   flex-direction: column;
@@ -51,53 +64,55 @@
   padding: 40px 24px;
 }
 
-.hero h1 {
+.hero-banner .hero h1 {
   max-width: unset;
   margin: 0 0 16px;
   color: var(--hero-navy);
   font-size: 28px;
+  font-weight: 800;
   line-height: 1.2;
 }
 
-.hero > div:last-child p {
+.hero-banner .hero > div:last-child p {
   margin: 0 0 24px;
   color: var(--hero-navy);
   font-size: 16px;
   line-height: 1.5;
 }
 
-.hero > div:last-child p:last-child {
+.hero-banner .hero > div:last-child p:last-child {
   margin-bottom: 0;
 }
 
-.hero .button-wrapper {
+.hero-banner .hero .button-wrapper {
   margin: 0;
 }
 
-.hero a.button.primary {
+.hero-banner .hero a.button.primary {
   gap: 12px;
   padding: 0.6em 0.6em 0.6em 1.4em;
   background-color: var(--hero-navy);
   border-color: var(--hero-navy);
+  border-radius: 999px;
   color: var(--color-neutral-50);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.hero a.button.primary:hover,
-.hero a.button.primary:focus-visible {
+.hero-banner .hero a.button.primary:hover,
+.hero-banner .hero a.button.primary:focus-visible {
   background-color: #132a5c;
   border-color: #132a5c;
 }
 
-.hero a.button.primary::after {
+.hero-banner .hero a.button.primary::after {
   content: "";
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  background-color: rgb(255 255 255 / 20%);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  width: 24px;
+  height: 24px;
+  background-color: #4a7fd6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 12px;
@@ -105,26 +120,32 @@
 }
 
 @media (min-width: 900px) {
-  .hero {
+  .hero-banner .hero {
     flex-direction: row;
     align-items: stretch;
     min-height: 420px;
   }
 
-  .hero > div:first-child {
+  .hero-banner .hero > div:first-child {
     width: 55%;
   }
 
-  .hero > div:first-child picture {
-    height: 100%;
+  .hero-banner .hero > div:first-child::before {
+    width: 64px;
   }
 
-  .hero > div:last-child {
+  .hero-banner .hero > div:first-child picture {
+    height: 100%;
+    margin-left: 40px;
+    border-radius: 28px;
+  }
+
+  .hero-banner .hero > div:last-child {
     width: 45%;
     padding: 48px 64px;
   }
 
-  .hero h1 {
+  .hero-banner .hero h1 {
     font-size: 42px;
   }
 }
