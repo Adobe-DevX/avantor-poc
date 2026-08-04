@@ -177,6 +177,10 @@
           {
             "name": "Detailed Card List",
             "value": "detailed-card-list"
+          },
+          {
+            "name": "Feaured Brand Cards",
+            "value": "feaured-brand-cards"
           }
         ]
       },

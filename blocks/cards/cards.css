@@ -114,3 +114,133 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/*
+ * Styles below are scoped to the "detailed-card-list" section style.
+ * A cards block placed in a section using this style renders as a row of
+ * detailed brand cards: a bold navy heading above cards that each have a
+ * rounded image, a blue linked title, a description, and a navy "Shop Now"
+ * pill button anchored to the bottom. Every rule is keyed off
+ * `.detailed-card-list`; the band stays within the page's content width.
+ */
+
+/* stylelint-disable no-descending-specificity */
+.detailed-card-list {
+  --detailed-card-navy: #0a1f44;
+  --detailed-card-blue: #1a5fd6;
+  --detailed-card-circle: #a7d3f0;
+}
+
+.detailed-card-list .default-content-wrapper h3 {
+  margin: 0;
+  color: var(--detailed-card-navy);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.detailed-card-list .cards > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-big);
+}
+
+.detailed-card-list .cards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: transparent;
+}
+
+.detailed-card-list .cards .cards-card-image {
+  line-height: 0;
+}
+
+.detailed-card-list .cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detailed-card-list .cards .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: var(--spacing-small) 0 0;
+}
+
+.detailed-card-list .cards .cards-card-body h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.detailed-card-list .cards .cards-card-body h2 a {
+  color: var(--detailed-card-blue);
+  text-decoration: none;
+}
+
+.detailed-card-list .cards .cards-card-body h2 a:hover {
+  text-decoration: underline;
+}
+
+.detailed-card-list .cards .cards-card-body p {
+  margin: 0 0 var(--spacing-small);
+  color: var(--color-neutral-800);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.detailed-card-list .cards .cards-card-body p.button-wrapper {
+  margin: auto 0 0;
+  padding-top: var(--spacing-xsmall);
+}
+
+.detailed-card-list .cards a.button.primary {
+  gap: 12px;
+  padding: 0.6em 0.6em 0.6em 1.4em;
+  background-color: var(--detailed-card-navy);
+  border-color: var(--detailed-card-navy);
+  border-radius: 999px;
+  color: var(--color-neutral-50);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.detailed-card-list .cards a.button.primary:hover,
+.detailed-card-list .cards a.button.primary:focus-visible {
+  background-color: #132a5c;
+  border-color: #132a5c;
+}
+
+.detailed-card-list .cards a.button.primary::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--detailed-card-circle);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1f44' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  border-radius: 50%;
+}
+
+@media (min-width: 600px) {
+  .detailed-card-list .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .detailed-card-list .default-content-wrapper h3 {
+    font-size: 36px;
+  }
+
+  .detailed-card-list .cards > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
